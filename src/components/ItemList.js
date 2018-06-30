@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addItem } from '../actions/createlist';
+import { clearRoute } from '../actions/route';
 import { Modal, Button } from 'react-materialize';
 
 
@@ -26,6 +27,7 @@ export class ItemList extends React.Component {
         }
 
         this.props.addItem(addItem);
+        this.props.clearRoute();
         this.props.history.push("/new");
     }
 
@@ -55,7 +57,7 @@ export class ItemList extends React.Component {
                                 <td className="hide-on-small-only">{item.barcode}</td>
                                 <td>
                                     <Modal
-                                        header={this.props.item_desc+item.name}
+                                        header={ this.props.item_desc + item.name }
                                         actions={
                                             <Button modal="close" onClick={() => this.addItemModal({description: this.props.item_desc, item})}>Add</Button>
                                         }
@@ -84,12 +86,13 @@ export class ItemList extends React.Component {
 };
 
 const mapDispatchToProps = (dispatch, props) => ({
-    addItem: (item) => dispatch(addItem(item))
+    addItem: (item) => dispatch(addItem(item)),
+    clearRoute: () => dispatch(clearRoute())
 });
 
 const mapStateToProps = (state, props) => {
 
-    const array = Object.values(props.match.params);
+    const array = state.route;
     console.log(array);
     let item_desc = array[0].toUpperCase() + " " + array[1] + "\" ";
     if(array[1] === "1-5"){

@@ -21,7 +21,7 @@ class List extends React.Component {
                 </div>
                 <div className="list-info">
                     <p className="list-info--creator">Created by: {this.props.list.creator}</p>
-                    <p className="list-info--date">{this.props.list.created}</p>
+                    <p className="list-info--date">{moment(this.props.list.created).format('MMMM Do YYYY, h:mm:ss a')}</p>
                 </div>
             </div>
         );

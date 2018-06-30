@@ -6,7 +6,7 @@ import DashboardPage from '../components/DashboardPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 import EditListPage from '../components/EditListPage';
-import NewList from '../components/NewList';
+import NewListPage from '../components/NewListPage';
 import ItemList from '../components/ItemList';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
@@ -24,20 +24,12 @@ const AppRouter = () => (
                     exact={true}
                 />
                 <PrivateRoute 
-                    path="/new/:material_type/:material_size/:fitting_type"
+                    path="/add"
                     component={ItemList}
                 />
                 <PrivateRoute 
-                    path="/new/:material_type/:material_size"
-                    component={NewList}
-                />
-                <PrivateRoute 
-                    path="/new/:material_type"
-                    component={NewList}
-                />
-                <PrivateRoute 
-                    path="/new/"
-                    component={NewList}
+                    path="/new"
+                    component={NewListPage}
                 />
                 <PrivateRoute 
                     path="/dashboard"

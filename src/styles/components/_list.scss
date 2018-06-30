@@ -3,11 +3,19 @@
         width: 100%;
         height: 50px;
     }
+    &-noitems {
+        text-align: center;
+    }
     &-button {
         width: 100%;
         padding: 50px;
         height: 100px;
         text-align: center;
+        button {
+            border: none;
+            background-color: #009688;
+            width: 100%;
+        }
         h2 {
             background-color: #009688;
             color: white;
