@@ -1,0 +1,18 @@
+on list save, take user to overview list page
+list page has send buttons for emailing
+
+overview list page
+quantity, desc + size + name, cost, barcode  
+
+make job name field required as a seperate step
+
+(pvc) (4inch) (reducing coupling)
+
+
+ <a
+                                        href="#quantity-modal" 
+                                        className="btn-floating btn-large waves-effect waves-light red"
+                                        //onClick={() => this.addItemModal(item)}
+                                    >
+                                        <i className="material-icons">add</i>
+                                    </a>
